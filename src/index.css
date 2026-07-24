@@ -5,3 +5,12 @@
 .dashboard-shell {
   @apply min-h-screen bg-gray-50;
 }
+
+.dashboard-shell[data-theme='dark'] {
+  @apply bg-gray-900;
+}
+
+.dashboard-shell[data-theme='dark'] main,
+.dashboard-shell[data-theme='dark'] main h1 {
+  @apply text-gray-100;
+}

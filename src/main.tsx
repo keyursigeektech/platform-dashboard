@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { Analytics } from './analytics'
+import { Analytics } from './analytics-tracker'
 import { AuthProvider } from './contexts/AuthContext'
 import './index.css'
 

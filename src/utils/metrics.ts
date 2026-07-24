@@ -5,11 +5,17 @@ export interface Metrics {
 }
 
 export function calculateActiveRate(metrics: Metrics): number {
-  // BUG: divides by revenue instead of totalUsers, and no guard against 0
-  return (metrics.activeUsers / metrics.revenue) * 100
+  if (metrics.totalUsers <= 0) {
+    return 0
+  }
+
+  return (metrics.activeUsers / metrics.totalUsers) * 100
 }
 
 export function calculateAverageRevenue(metrics: Metrics): number {
-  // BUG: no guard when totalUsers is 0 -> Infinity/NaN at runtime
+  if (metrics.totalUsers <= 0) {
+    return 0
+  }
+
   return metrics.revenue / metrics.totalUsers
 }
